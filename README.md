@@ -46,14 +46,14 @@ The ETL flows as follows:
 1. Load data from S3 bucket
 2. Update column names: use standard snake case
 3. Remove null rows
-4. Using existing table records and raw data, get unique records and update tables e.g. apply a left anti join to (warehouses from raw data, warehouses in database), then insert new records
+4. Using existing table records and raw data, get unique records and update tables e.g. apply a left anti-join to (warehouses from raw data, warehouses in database), then insert new records
 5. Create normalised sales data by joining records of tables and raw data
 6. Insert sales data (Pending: whether to add a unique check for records before insert)
 
 
 ## Reporting
 - A file with SQL scripts for the different reports is placed under the db directory
-- Price data is not provided, thus revenue isn't calculated, however, quantities are summarized and given prices data, it can easily be improved on
+- Price data is not provided, thus revenue isn't calculated, however, quantities are summarized, and given prices data, it can easily be improved on
 
 
 ## Challenges and workarounds
