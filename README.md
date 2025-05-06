@@ -5,7 +5,6 @@ A simple ingestion pipeline from S3 to RDS
 ## AWS Set Up
 
 ### S3
-
 - Create an S3 bucket and give it a unique name ```bucket_name```
 - Create a folder structure as follows:
 ```
@@ -22,7 +21,6 @@ A simple ingestion pipeline from S3 to RDS
 - Upload the scripts directory files to the s3 'scripts' folder
 
 ### IAM Role
-
 - Create an IAM role to be used for the pipeline as ```role_name```
 - Attach the following policies from IAM 
     ```
