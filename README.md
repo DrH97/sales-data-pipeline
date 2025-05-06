@@ -61,3 +61,9 @@ The ETL flows as follows:
 2. ~~Because of that, the ETL does not load the data to RDS and instead populates the catalogue tables temporarily~~ **Resolved**
 3. With an empty DB, the ETL needs to be executed twice to first populate the dependency tables before sales data can be populated in a normalised format. **Proposed solution:** edit the script to have the sales data insertion to come after all other data is populated
 4. Review usage of other fields as the primary key instead of autogen id since they are utilised in multiple joins
+
+### References
+- [AWS docs](https://docs.aws.amazon.com/glue/)
+- https://github.com/johnny-chivers/aws-glue-course
+- https://www.youtube.com/watch?v=ZvJSaioPYyo
+- https://www.youtube.com/watch?v=rVrTiJRTviA
