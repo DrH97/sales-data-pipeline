@@ -38,7 +38,7 @@ A simple ingestion pipeline from S3 to RDS
 ### Glue
 - Create a glue service and create a new ETL using the configs defined in Sales_Data_Pipeline_ETL
 - Create a catalogue database to be used to reference the rds database
-- Add a connection to the RDS database
+- Add a connection to the RDS database (May require VPC endpoint configurations)
 - Add a crawler to use the connection and populate the catalogue database tables
 
 ## ETL Flow
