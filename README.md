@@ -43,6 +43,15 @@ A simple ingestion pipeline from S3 to RDS
 - Add a connection to the RDS database
 - Add a crawler to use the connection and populate the catalogue database tables
 
+## ETL Flow
+The ETL flows as follows:
+1. Load data from S3 bucket
+2. Update column names: use standard snake case
+3. Remove null rows
+4. Using existing table records and raw data, get unique records and update tables e.g. apply a left anti join to (warehouses from raw data, warehouses in database), then insert new records
+5. Create normalised sales data by joining records of tables and raw data
+6. Insert sales data (Pending: whether to add a unique check for records before insert)
+
 
 ## Reporting
 - A file with sql scripts for the different reports is placed under the db directory
@@ -50,5 +59,5 @@ A simple ingestion pipeline from S3 to RDS
 
 
 ## Challenges and workarounds
-1. Glue connection to RDS refused to connect and had to debug for quite a while. Continuing to review the issue
-2. Because of that, the ETL does not load the data to RDS and instead populates the catalogue tables temporarily
+~~1. Glue connection to RDS refused to connect and had to debug for quite a while. Continuing to review the issue~~ Resolved (security groups config)
+~~2. Because of that, the ETL does not load the data to RDS and instead populates the catalogue tables temporarily~~ Resolved
