@@ -54,10 +54,11 @@ The ETL flows as follows:
 
 
 ## Reporting
-- A file with sql scripts for the different reports is placed under the db directory
-- Price data is not provided thus revenue isn't calculated, however, quantities are summarized and given prices data, it can easily be improved on
+- A file with SQL scripts for the different reports is placed under the db directory
+- Price data is not provided, thus revenue isn't calculated, however, quantities are summarized and given prices data, it can easily be improved on
 
 
 ## Challenges and workarounds
-~~1. Glue connection to RDS refused to connect and had to debug for quite a while. Continuing to review the issue~~ Resolved (security groups config)
-~~2. Because of that, the ETL does not load the data to RDS and instead populates the catalogue tables temporarily~~ Resolved
+1. ~~Glue connection to RDS refused to connect and had to debug for quite a while. Continuing to review the issue~~ **Resolved** (security groups config)
+2. ~~Because of that, the ETL does not load the data to RDS and instead populates the catalogue tables temporarily~~ **Resolved**
+3. With an empty DB, the ETL needs to be executed twice to first populate the dependency tables before sales data can be populated in a normalised format. **Proposed solution:** edit the script to have the sales data insertion to come after all other data is populated
