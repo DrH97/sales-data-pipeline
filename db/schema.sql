@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS sales
     distributor_id    INTEGER REFERENCES distributors (id),
     warehouse_id      INTEGER REFERENCES warehouses (id),
     product_id        INTEGER REFERENCES products (id),
+    unit_of_measure_id INTEGER REFERENCES units_of_measures (id),
     sales_date        DATE NOT NULL,
     sales_day         INT  NOT NULL,
     sales_month       INT  NOT NULL,
