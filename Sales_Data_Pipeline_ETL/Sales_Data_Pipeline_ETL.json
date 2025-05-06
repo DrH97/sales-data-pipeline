@@ -8,7 +8,7 @@
   },
   "command" : {
     "name" : "glueetl",
-    "scriptLocation" : "s3://aws-glue-assets-700297736607-af-south-1/scripts/Sales_Data_Pipeline_ETL.py",
+    "scriptLocation" : "s3://sales-data-pipeline-s3-bucket/scripts/Sales_Data_Pipeline_ETL.py",
     "pythonVersion" : "3"
   },
   "defaultArguments" : {
@@ -21,7 +21,7 @@
     "--enable-glue-datacatalog" : "true",
     "--job-bookmark-option" : "job-bookmark-disable",
     "--job-language" : "python",
-    "--TempDir" : "s3://aws-glue-assets-700297736607-af-south-1/temporary/"
+    "--TempDir" : "s3://sales-data-pipeline-s3-bucket/temporary/"
   },
   "maxRetries" : 0,
   "allocatedCapacity" : 10,
