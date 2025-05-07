@@ -41,6 +41,8 @@ A simple ingestion pipeline from S3 to RDS
 - Add a connection to the RDS database (May require VPC endpoint configurations)
 - Add a crawler to use the connection and populate the catalogue database tables
 
+
+
 ## ETL Flow
 The ETL flows as follows:
 1. Load data from S3 bucket
@@ -59,7 +61,7 @@ The ETL flows as follows:
 ## Challenges and workarounds
 1. ~~Glue connection to RDS refused to connect and had to debug for quite a while. Continuing to review the issue~~ **Resolved** (security groups config)
 2. ~~Because of that, the ETL does not load the data to RDS and instead populates the catalogue tables temporarily~~ **Resolved**
-3. With an empty DB, the ETL needs to be executed twice to first populate the dependency tables before sales data can be populated in a normalised format. **Proposed solution:** edit the script to have the sales data insertion to come after all other data is populated
+3. ~~With an empty DB, the ETL needs to be executed twice to first populate the dependency tables before sales data can be populated in a normalised format. **Proposed solution:** edit the script to have the sales data insertion to come after all other data is populated~~ **Resolved** (added a 'Sales_Data_Pipeline_ETL-script' that re-orders the etl flow)
 4. Review usage of other fields as the primary key instead of autogen id since they are utilised in multiple joins
 
 ### References
